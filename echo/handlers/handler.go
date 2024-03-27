@@ -1,20 +1,19 @@
 package handlers
 
 import (
-	"app/services"
 	"github.com/labstack/echo/v4"
 	"net/http"
 )
 
-type UserHandler struct {
-	userService *services.UserService
+type userHandler struct {
+	userService UserService
 }
 
-func NewUserHandler(userService *services.UserService) *UserHandler {
-	return &UserHandler{userService: userService}
+func NewUserHandler(userService UserService) *userHandler {
+	return &userHandler{userService: userService}
 }
 
-func (h *UserHandler) GetUsers(c echo.Context) error {
+func (h *userHandler) GetUsers(c echo.Context) error {
 	user, err := h.userService.GetAllUsers()
 	if err != nil {
 

@@ -5,15 +5,15 @@ import (
 	"database/sql"
 )
 
-type UserRepository struct {
-	DB *sql.DB
+type userRepository struct {
+	db *sql.DB
 }
 
-func NewUserRepository(db *sql.DB) *UserRepository {
-	return &UserRepository{DB: db}
+func NewUserRepository(db *sql.DB) *userRepository {
+	return &userRepository{db: db}
 }
 
-func (ur UserRepository) FindAll() ([]models.User, error) {
+func (ur userRepository) FindAll() ([]models.User, error) {
 	var slice []models.User
 	slice = append(slice, models.User{UserID: "5"})
 	return slice, nil
