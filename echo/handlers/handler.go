@@ -5,15 +5,15 @@ import (
 	"net/http"
 )
 
-type userHandler struct {
+type UserHandler struct {
 	userService UserService
 }
 
-func NewUserHandler(userService UserService) *userHandler {
-	return &userHandler{userService: userService}
+func NewUserHandler(userService UserService) *UserHandler {
+	return &UserHandler{userService: userService}
 }
 
-func (h *userHandler) GetUsers(c echo.Context) error {
+func (h *UserHandler) GetUsers(c echo.Context) error {
 	user, err := h.userService.GetAllUsers()
 	if err != nil {
 
