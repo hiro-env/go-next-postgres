@@ -6,7 +6,7 @@ type User struct {
 	ID        int64     `json:"id" db:"id"`
 	Username  string    `json:"userName" db:"username"`
 	Nickname  string    `json:"nickname" db:"nickname"`
-	Image     string    `json:"image" db:"image"`
+	Image     []byte    `json:"image" db:"image"`
 	CreatedBy string    `json:"createdBy" db:"created_by"`
 	CreatedAt time.Time `json:"createdAt" db:"created_at"`
 	UpdatedBy string    `json:"updatedBy" db:"updated_by"`
