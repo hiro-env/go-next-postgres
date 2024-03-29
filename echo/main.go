@@ -8,6 +8,7 @@ import (
 	"app/routes"
 	"app/services"
 	"github.com/labstack/echo/v4"
+	"github.com/labstack/echo/v4/middleware"
 	_ "github.com/lib/pq"
 )
 
@@ -23,7 +24,17 @@ func main() {
 	userService := services.NewUserService(userRepo)
 	userHandler := handlers.NewUserHandler(userService)
 
+	accountRepo := repositories.NewAccountRepository(db)
+	accountService := services.NewAccountService(accountRepo)
+	accountHandler := handlers.NewAccountHandler(accountService)
+
 	e := echo.New() // Echoのインスタンスを作成
-	routes.Init(e, userHandler)
+
+	e.Use(middleware.CORSWithConfig(middleware.CORSConfig{
+		AllowOrigins: []string{"http://localhost:3000"}, // すべてのオリジンを許可
+		AllowMethods: []string{echo.GET, echo.PUT, echo.POST, echo.DELETE},
+	}))
+
+	routes.Init(e, userHandler, accountHandler)
 	e.Logger.Fatal(e.Start(":8080")) // 8080ポートでサーバを起動
 }
