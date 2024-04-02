@@ -60,6 +60,11 @@ const MyPage: React.FC = () => {
     console.log('Nickname:', nickname);
     console.log('Profile Picture:', profilePic);
 
+    if (profilePic === "https://via.placeholder.com/150") {
+      alert("画像をクリックして設定してください。");
+      return;
+    }
+
     const base64ImageContent = profilePic.replace(/^data:image\/[a-z]+;base64,/, '');
     const payload = {
       username: nickname,
@@ -152,7 +157,7 @@ const MyPage: React.FC = () => {
                 保存
               </button>
               <button
-                  onClick={handleDelete} // 削除ボタンのイベントハンドラー
+                  onClick={handleDelete}
                   className="px-4 py-2 ml-6 bg-red-500 text-white rounded-lg hover:bg-red-600"
                 >
                   アカウント削除
