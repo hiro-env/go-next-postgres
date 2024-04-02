@@ -7,6 +7,7 @@ type User struct {
 	Username  string    `db:"username"`
 	Nickname  string    `db:"nickname"`
 	Image     []byte    `db:"image"`
+	Password  string    `db:"password"`
 	CreatedBy string    `db:"created_by"`
 	CreatedAt time.Time `db:"created_at"`
 	UpdatedBy string    `db:"updated_by"`
