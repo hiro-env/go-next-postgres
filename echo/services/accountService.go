@@ -2,6 +2,7 @@ package services
 
 import (
 	"app/models"
+	"app/repositories"
 	"crypto/sha256"
 	"encoding/hex"
 	"errors"
@@ -13,10 +14,10 @@ import (
 )
 
 type accountService struct {
-	accountRepository AccountRepository
+	accountRepository repositories.AccountRepository
 }
 
-func NewAccountService(ar AccountRepository) *accountService {
+func NewAccountService(ar repositories.AccountRepository) *accountService {
 	return &accountService{accountRepository: ar}
 }
 
