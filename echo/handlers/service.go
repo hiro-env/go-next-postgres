@@ -3,5 +3,10 @@ package handlers
 import "app/models"
 
 type UserService interface {
-	GetAllUsers() ([]models.User, error)
+	SearchUsers(nickname string) ([]models.User, error)
+}
+
+type AccountService interface {
+	CreateUser(request *models.UserRegisterRequest) (int64, error)
+	GetAllUsernames() ([]string, error)
 }
