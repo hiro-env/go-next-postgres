@@ -10,8 +10,8 @@
 (Chromeだと画像登録の際にPCのファイル選択画面が開かない）
 
 ### 備考
-- named volumeの削除
-`docker volume rm app_postgres_data`
+- named volumeの削除<br>
+`docker volume rm go-next-postgres_postgres_data`<br>
 `docker-compose down -v`
 
 ## わかったこと
