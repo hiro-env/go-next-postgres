@@ -6,8 +6,7 @@
 ## 起動方法
 1. nextディレクトリで`yarn install`を実施する
 1. ルートディレクトリにてdocker-compose upコマンドを実施する
-1. **Firefoxで** [http://localhost:3000/login](http://localhost:3000/login) へアクセスする
-(Chromeだと画像登録の際にPCのファイル選択画面が開かない）
+1. [http://localhost:3000/login](http://localhost:3000/login) へアクセスする
 
 ### 備考
 - named volumeの削除<br>
