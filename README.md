@@ -4,7 +4,7 @@
 - アプリケーションとしての目的等はない
 
 ## 起動方法
-1. ルートディレクトリにてdocker-compose upコマンドを実施する
+1. ルートディレクトリにて`docker-compose up`コマンドを実施する
 1. [http://localhost:3000/login](http://localhost:3000/login) へアクセスする
 
 ### 備考
