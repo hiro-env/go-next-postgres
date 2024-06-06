@@ -5,7 +5,7 @@
 
 ## 起動方法
 1. ルートディレクトリにて`docker-compose up`コマンドを実施する
-1. [http://localhost:3000/login](http://localhost:3000/login) へアクセスする
+1. [http://localhost:3000/login](http://localhost:3000/login) へアクセスする(Next.jsのビルドに多少時間を要する）
 
 ### 備考
 - named volumeの削除<br>
