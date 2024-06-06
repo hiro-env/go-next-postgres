@@ -34,6 +34,8 @@ services:
       - "3000:3000"
     volumes:
       - ./next:/front
+      # マウント時にホスト側のnode_modulesで上書きしないようボリュームを設定
+      - /front/node_modules
 
 volumes:
   postgres_data:

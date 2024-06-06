@@ -1,17 +1,12 @@
-FROM node:18-alpine as builder
+FROM node:18-alpine
 
 WORKDIR /front
 
-COPY package.*json .
+COPY package.*json ./
+COPY yarn.lock ./
 
 RUN yarn install
 
-COPY . .
-
-RUN yarn build
-
 EXPOSE 3000
 
-# CMD ["yarn", "start"]
 CMD ["yarn", "dev"]
-
