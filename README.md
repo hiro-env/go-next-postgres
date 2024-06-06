@@ -4,7 +4,6 @@
 - アプリケーションとしての目的等はない
 
 ## 起動方法
-1. nextディレクトリで`yarn install`を実施する
 1. ルートディレクトリにてdocker-compose upコマンドを実施する
 1. [http://localhost:3000/login](http://localhost:3000/login) へアクセスする
 
